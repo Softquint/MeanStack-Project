@@ -1,0 +1,82 @@
+<form name="updateUserForm" ng-submit="ok(updateUserForm.$valid)" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">Update</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group"
+                ng-class="{ 'has-error' : updateUserForm.fname.$invalid && updateUserForm.fname.$dirty}">
+                    <label  for="exampleInputEmail1">Firs Name</label>
+                    <input  type="text" class="form-control" 
+                    placeholder="First Name"
+                    ng-model="edituser.fname"
+                    name="fname"
+                    required>
+                    <div    class="help-block" 
+                            ng-messages="updateUserForm.fname.$error" 
+                            ng-if="updateUserForm.fname.$dirty">
+                            <p  ng-message="required">Your first name is required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group"
+                ng-class="{ 'has-error' : updateUserForm.lname.$invalid && updateUserForm.lname.$dirty}">
+                    <label  for="exampleInputEmail1">Last Name</label>
+                    <input  type="text" class="form-control" 
+                    placeholder="Last Name"
+                    ng-model="edituser.lname"
+                    name="lname"
+                    required>
+                    <div    class="help-block" 
+                            ng-messages="updateUserForm.lname.$error" 
+                            ng-if="updateUserForm.lname.$dirty">
+                            <p  ng-message="required">Your last name is required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group"
+                ng-class="{ 'has-error' :updateUserForm.shortname.$invalid && updateUserForm.shortname.$dirty}">
+                    <label  for="exampleInputEmail1">Short Name</label>
+                    <input  type="text" class="form-control" 
+                    placeholder="Short Name"
+                    ng-model="edituser.shortname"
+                    name="shortname"
+                    required ng-minlength="3" ng-maxlength="10">
+                    <div    class="help-block" 
+                            ng-messages="updateUserForm.shortname.$error" 
+                            ng-if="updateUserForm.shortname.$dirty">
+                            <p  ng-message="required">Your short name is required.</p>
+                            <p  ng-message="minlength">Your short name is too short.</p>
+                            <p  ng-message="maxlength">Your short name is too long.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6"
+            ng-class="{ 'has-error' : updateUserForm.email.$invalid && updateUserForm.email.$dirty}">
+                <div class="form-group">
+                    <label  for="exampleInputEmail1">Email</label>
+                    <input  type="email" class="form-control" 
+                    placeholder="Email"
+                    ng-model="edituser.email"
+                    name="email"
+                    required>
+                    <div    class="help-block" 
+                            ng-messages="updateUserForm.email.$error" 
+                            ng-if="updateUserForm.email.$dirty">
+                            <p  ng-message="required">Your email is required.</p>
+                            <p  ng-message="email">Your email should be valid.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

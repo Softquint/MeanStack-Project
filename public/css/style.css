@@ -1,0 +1,20 @@
+body{
+	background: url('../public/img/bg.jpg') no-repeat;
+	background-size: 115%;
+}
+img{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 5px;
+	background: #fff;
+}
+.loginform{
+	margin-top: 200px;
+}
+.loginform .main-contain{
+	background: rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
+}

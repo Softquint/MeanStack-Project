@@ -1,0 +1,38 @@
+
+
+<!-- HEADER -->
+<ng-include src="'./views/header.html'" ng-if="showheader == true"></ng-include>
+	
+<div class="jumbotron text-center">
+	<table class="table table-bordered table-striped">
+		<caption>
+			<div class="alert" ng-show="ShowMessage" ng-class="MessageClass">
+			<i class="glyphicon glyphicon-info-sign"></i> {{message}}</div>
+		</caption>
+		<thead>
+			<tr>
+				<th>Profile</th>
+				<th>Name</th>
+				<th>email</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in Users">
+				<td><img ng-src="/public/img/{{user.shortname}}.jpg" width="50px;"></td>
+				<td>{{user.fname}} {{user.lname}}</td>
+				<td>{{user.email}}</td>
+				<td>
+					<span class="btn glyphicon glyphicon-pencil" ng-click="editUser(user)"></span>
+					<span class="btn glyphicon glyphicon-trash" ng-click="deleteUser(user)"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="txt-right">
+					<span class="btn btn-primary" style="float:right" ng-click="addUser()"> 
+					Add User</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

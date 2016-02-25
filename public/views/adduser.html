@@ -1,0 +1,116 @@
+<form name="userForm" ng-submit="ok(userForm.$valid)" novalidate>
+    <div class="modal-header">
+        <h3 class="modal-title">Add</h3>
+    </div>
+    <div class="modal-body">    
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group" 
+                ng-class="{ 'has-error' : (userForm.fname.$touched || submitted) && userForm.fname.$invalid}">
+                    <label  for="exampleInputEmail1">Firs Name</label>
+                    <input  type="text" class="form-control" 
+                    placeholder="First Name"
+                    ng-model="adduser.fname"
+                    name="fname"
+                    tabindex="0" 
+                    required focus-if>
+                    <div    class="help-block" 
+                            ng-messages="userForm.fname.$error" 
+                            ng-if="(userForm.fname.$touched || submitted)">
+                            <p  ng-message="required">Your first name is required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group" 
+                ng-class="{ 'has-error' : (userForm.lname.$touched || submitted) && userForm.lname.$invalid}">
+                    <label  for="exampleInputEmail1">Last Name</label>
+                    <input  type="text" class="form-control" 
+                    placeholder="Last Name"
+                    ng-model="adduser.lname"
+                    name="lname"
+                    required>
+                    <div    class="help-block" 
+                            ng-messages="userForm.lname.$error" 
+                            ng-if="(userForm.lname.$touched || submitted)">
+                            <p  ng-message="required">Your last name is required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group" 
+                ng-class="{ 'has-error' : (userForm.password.$touched || submitted) && userForm.password.$invalid}">
+                    <label  for="exampleInputEmail1">Password</label>
+                    <input  type="password" class="form-control" 
+                    placeholder="Password"
+                    ng-model="adduser.password"
+                    name="password"
+                    required>
+                    <div    class="help-block" 
+                            ng-messages="userForm.password.$error" 
+                            ng-if="(userForm.password.$touched || submitted)">
+                            <p  ng-message="required">Your Password is required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group" 
+                ng-class="{ 'has-error' : (userForm.cnfpassword.$touched || submitted) && userForm.cnfpassword.$invalid}">
+                    <label  for="exampleInputEmail1">Confirm Password</label>
+                    <input  type="password" class="form-control" 
+                    placeholder="Confirm Password"
+                    ng-model="adduser.cnfpassword"
+                    name="cnfpassword"
+                    required>
+                    <div    class="help-block" 
+                            ng-messages="userForm.cnfpassword.$error" 
+                            ng-if="(userForm.cnfpassword.$touched || submitted)">
+                            <p  ng-message="required">Your last name is required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group" 
+                ng-class="{ 'has-error' :(userForm.shortname.$touched || submitted) && userForm.shortname.$invalid}">
+                    <label  for="exampleInputEmail1">Short Name</label>
+                    <input  type="text" class="form-control" 
+                    placeholder="Short Name"
+                    ng-model="adduser.shortname"
+                    name="shortname"
+                    required ng-minlength = "3" ng-maxlength = "10">
+                    <div    class="help-block" 
+                            ng-messages="userForm.shortname.$error" 
+                            ng-if="(userForm.shortname.$touched || submitted)">
+                            <p  ng-message="required">Your last name is required.</p>
+                            <p  ng-message="minlength">Your last is too short.</p>
+                            <p  ng-message="maxlength">Your last is too long.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group" 
+                ng-class="{ 'has-error' : (userForm.email.$touched || submitted) && userForm.email.$invalid}">
+                    <label  for="exampleInputEmail1">Email</label>
+                    <input  type="email" class="form-control" 
+                    placeholder="Email"
+                    name="email"
+                    ng-model="adduser.email" required>
+                    <div    class="help-block" 
+                            ng-messages="userForm.email.$error" 
+                            ng-if="(userForm.email.$touched || submitted)">
+                            <p  ng-message="required">Your email is required.</p>
+                            <p  ng-message="email">Your email should be valid.</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

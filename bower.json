@@ -1,0 +1,14 @@
+{
+	"name": "angular",
+	"version": "1.0.0",
+	"dependencies": {
+		"bootstrap": "latest",
+		"angular": "1.4.7",
+		"angular-route": "latest",
+		"angular-ui-bootstrap-bower": "latest",
+		"angular-messages": "latest",
+		"ng-focus-if": "latest",
+		"ngStorage" : "latest",
+		"angular-cookies" : "latest"
+	}
+}
